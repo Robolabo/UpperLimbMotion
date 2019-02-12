@@ -19,4 +19,4 @@ Motion capture techniques are used quite broadly nowadays thanks to the differen
 
 Clinical application
 =====================
-The information obtained from both, the Kinescan and the Smartwheels, is processed through a custom-made software interface in which the inverse dynamic and post-processing algorithms are embedded, being transparent to the user.
+The information obtained from both, the Kinescan and the Smartwheels, is processed through a custom-made software interface in which the inverse dynamic and post-processing algorithms are embedded, being transparent to the user. Therefore, a clinical application which allows the clinical staff to obtain all biomechanical results without the need for having a deep technical knowledge and without having to deal with any programming software has been developed. Moreover, a report functionality is incorporated into the solution based on the interaction with the processed data creating a comprehensive solution.
