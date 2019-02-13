@@ -3,7 +3,7 @@
 Introduction
 ==============
 
-A clinical oriented application, along with an experimental protocol would enable clinicians without specific skills and technical knowledge on movement analysis, to perform a biomechanical analysis of manual wheelchair propulsion. Therefore, the objective of this paper is to develop a clinical oriented application in which a complete biomechanical analysis is embedded, guiding the clinicians through the process of performing a wheelchair propulsion test and providing them with the necessary information to accomplish the analysis as well as to generate a comprehensive report with the outcome of the analysis. Therefore, a deep and objective study could be performed in a faster and more efficient manner.
+A clinical oriented application along with an experimental protocol that would enable clinicians without specific skills and technical knowledge on movement analysis, to perform a biomechanical analysis of manual wheelchair propulsion. Therefore, the objective is to develop a clinical oriented application in which a complete biomechanical analysis is embedded, guiding the clinicians through the process of performing a wheelchair propulsion test and providing them with the necessary information to accomplish the analysis as well as to generate a comprehensive report with the outcome of the analysis. 
 
 Biomechanical analysis
 =======================
