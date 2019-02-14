@@ -1,4 +1,26 @@
-% REPRESENTACI�N GR�FICA DE TODOS LOS PAR�METROS
+/*
+*    This program is free software: you can redistribute it and/or modify
+*    it under the terms of the GNU General Public License as published by
+*    the Free Software Foundation, either version 3 of the License, or
+*    any later version.
+*
+*    This program is distributed in the hope that it will be useful,
+*    but WITHOUT ANY WARRANTY; without even the implied warranty of
+*    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*    GNU General Public License for more details.
+*
+*    You should have received a copy of the GNU General Public License
+*    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*
+*
+*    Authors: Blanca Larraga García <blanca.larraga@upm.es>
+*             Antonio J. del Ama Espinosa <ajdela@sescam.jccm.es>
+*	          Alvaro Gutierrez Martin <aguti@etsit.upm.es>
+*
+*    Developed in Hospital Nacional de Parapléjicos de Toledo <http://hnparaplejicos.sescam.castillalamancha.es> 
+*          and in Robolabo <http://www.robolabo.etsit.upm.es/>    
+*/
+% REPRESENTACIï¿½N GRï¿½FICA DE TODOS LOS PARï¿½METROS
 % Tronco
 % figure;
 % 
@@ -12,7 +34,7 @@
 % plot(escala_normal,angulos_tronco.alfa_tr_repC3);
 % plot(escala_normal,angulos_tronco.alfa_tr_repC4);
 % plot(escala_normal,angulos_tronco.alfa_tr_repC5);
-% plottitle=['�ngulo alfa del tronco: + balanceo lateral hacia la derecha'];
+% plottitle=['ï¿½ngulo alfa del tronco: + balanceo lateral hacia la derecha'];
 % title(plottitle)
 % 
 % 
@@ -26,7 +48,7 @@
 % plot(escala_normal,angulos_tronco.beta_tr_repC3);
 % plot(escala_normal,angulos_tronco.beta_tr_repC4);
 % plot(escala_normal,angulos_tronco.beta_tr_repC5);
-% plottitle=['�ngulo beta del tronco: + torsion hacia la izquierda'];
+% plottitle=['ï¿½ngulo beta del tronco: + torsion hacia la izquierda'];
 % title(plottitle)
 % 
 % subplot(3,1,3,'Ylim',[-5 5],...
@@ -39,7 +61,7 @@
 % plot(escala_normal,angulos_tronco.gamma_tr_repC3);
 % plot(escala_normal,angulos_tronco.gamma_tr_repC4);
 % plot(escala_normal,angulos_tronco.gamma_tr_repC5);
-% plottitle=['�ngulo gamma del tronco: + extensi�n'];
+% plottitle=['ï¿½ngulo gamma del tronco: + extensiï¿½n'];
 % title(plottitle)
 
 f1=figure('visible','off');
@@ -58,7 +80,7 @@ ymin_alpha_tr=num2str(ymin,2);
 plot(escala_normal,angulos_tronco.media_alfa+angulos_tronco.desviacion_alfa,'r');
 plot(escala_normal,angulos_tronco.media_alfa-angulos_tronco.desviacion_alfa,'b');
 legend('Media','Media+SD','Media-SD')
-plottitle=['Curva media �ngulo alfa del tronco: balanceo'];
+plottitle=['Curva media ángulo alfa del tronco: balanceo'];
 title(plottitle)
 
 subplot(3,1,2,'Ylim',[-6 6],...
@@ -76,7 +98,7 @@ ymin_beta_tr=num2str(ymin,2);
 plot(escala_normal,angulos_tronco.media_beta+angulos_tronco.desviacion_beta,'r');
 plot(escala_normal,angulos_tronco.media_beta-angulos_tronco.desviacion_beta,'b');
 legend('Media','Media+SD','Media-SD')
-plottitle=['Curva media �ngulo beta del tronco: torsi�n'];
+plottitle=['Curva media ángulo beta del tronco: torsión'];
 title(plottitle)
 
 subplot(3,1,3,'Ylim',[-5 5],...
@@ -94,7 +116,7 @@ ymin_gamma_tr=num2str(ymin,2);
 plot(escala_normal,angulos_tronco.media_gamma+angulos_tronco.desviacion_gamma,'r');
 plot(escala_normal,angulos_tronco.media_gamma-angulos_tronco.desviacion_gamma,'b');
 legend('Media','Media+SD','Media-SD')
-plottitle=['Curva media �ngulo gamma del tronco: extensi�n'];
+plottitle=['Curva media ángulo gamma del tronco: extensión'];
 title(plottitle)
 saveas(gcf,'angulostronco.jpeg');
 
@@ -307,7 +329,7 @@ saveas(gcf,'fuerzashombro.jpeg');
 % % plot(escala_normal,angulos_hombro.alfa_rsho_repC3);
 % % plot(escala_normal,angulos_hombro.alfa_rsho_repC4);
 % % plot(escala_normal,angulos_hombro.alfa_rsho_repC5);
-% % plottitle=['�ngulo alfa en el hombro: + elevaci�n negativa (o adduci�n)'];
+% % plottitle=['ï¿½ngulo alfa en el hombro: + elevaciï¿½n negativa (o adduciï¿½n)'];
 % % title(plottitle)
 % % 
 % % subplot(3,1,2,'Ylim',[-100 100],...
@@ -320,7 +342,7 @@ saveas(gcf,'fuerzashombro.jpeg');
 % % plot(escala_normal,angulos_hombro.beta_rsho_repC3);
 % % plot(escala_normal,angulos_hombro.beta_rsho_repC4);
 % % plot(escala_normal,angulos_hombro.beta_rsho_repC5);
-% % plottitle=['�ngulo beta en el hombro: + Plano de elevaci�n por delante de la l�nea horizontal que conecta los acromiones'];
+% % plottitle=['ï¿½ngulo beta en el hombro: + Plano de elevaciï¿½n por delante de la lï¿½nea horizontal que conecta los acromiones'];
 % % title(plottitle)
 % % 
 % % subplot(3,1,3,'Ylim',[-50 90],...
@@ -333,7 +355,7 @@ saveas(gcf,'fuerzashombro.jpeg');
 % % plot(escala_normal,angulos_hombro.gamma_rsho_repC3);
 % % plot(escala_normal,angulos_hombro.gamma_rsho_repC4);
 % % plot(escala_normal,angulos_hombro.gamma_rsho_repC5);
-% % plottitle=['�ngulo gamma en el hombro: + rotaci�n interna'];
+% % plottitle=['ï¿½ngulo gamma en el hombro: + rotaciï¿½n interna'];
 % % title(plottitle)
 % 
 f4=figure('visible','off');
@@ -352,7 +374,7 @@ ymin_alpha_hombro=num2str(ymin,2);
 plot(escala_normal,angulos_hombro.media_alfa+angulos_hombro.desviacion_alfa,'r');
 plot(escala_normal,angulos_hombro.media_alfa-angulos_hombro.desviacion_alfa,'b');
 legend('Media','Media+SD','Media-SD')
-plottitle=['Curva media �ngulo alfa en el hombro: elevaci�n'];
+plottitle=['Curva media ángulo alfa en el hombro: elevación'];
 title(plottitle)
 
 subplot(3,1,2,'Ylim',[-50 50],...
@@ -370,7 +392,7 @@ ymin_beta_hombro=num2str(ymin,2);
 plot(escala_normal,angulos_hombro.media_beta+angulos_hombro.desviacion_beta,'r');
 plot(escala_normal,angulos_hombro.media_beta-angulos_hombro.desviacion_beta,'b');
 legend('Media','Media+SD','Media-SD')
-plottitle=['Curva media �ngulo beta en el hombro: Plano de elevaci�n'];
+plottitle=['Curva media ángulo beta en el hombro: Plano de elevación'];
 title(plottitle)
 
 subplot(3,1,3,'Ylim',[-50 90],...
@@ -388,7 +410,7 @@ ymin_gamma_hombro=num2str(ymin,2);
 plot(escala_normal,angulos_hombro.media_gamma+angulos_hombro.desviacion_gamma,'r');
 plot(escala_normal,angulos_hombro.media_gamma-angulos_hombro.desviacion_gamma,'b');
 legend('Media','Media+SD','Media-SD')
-plottitle=['Curva media �ngulo gamma en el hombro: rotaci�n interna'];
+plottitle=['Curva media ángulo gamma en el hombro: rotación interna'];
 title(plottitle)
 saveas(gcf,'anguloshombro.jpeg');
 
@@ -600,7 +622,7 @@ saveas(gcf,'fuerzascodo.jpeg');
 % % plot(escala_normal,angulos_codo.alfa_relb_repC3);
 % % plot(escala_normal,angulos_codo.alfa_relb_repC4);
 % % plot(escala_normal,angulos_codo.alfa_relb_repC5);
-% % plottitle=['�ngulo alfa en el codo: + adducci�n'];
+% % plottitle=['ï¿½ngulo alfa en el codo: + adducciï¿½n'];
 % % title(plottitle)
 % % 
 % % subplot(3,1,2,'Ylim',[40 120],...
@@ -613,7 +635,7 @@ saveas(gcf,'fuerzascodo.jpeg');
 % % plot(escala_normal,angulos_codo.beta_relb_repC3);
 % % plot(escala_normal,angulos_codo.beta_relb_repC4);
 % % plot(escala_normal,angulos_codo.beta_relb_repC5);
-% % plottitle=['�ngulo beta en el codo: + rotaci�n interna'];
+% % plottitle=['ï¿½ngulo beta en el codo: + rotaciï¿½n interna'];
 % % title(plottitle)
 % % 
 % % subplot(3,1,3,'Ylim',[0 120],...
@@ -626,7 +648,7 @@ saveas(gcf,'fuerzascodo.jpeg');
 % % plot(escala_normal,angulos_codo.gamma_relb_repC3);
 % % plot(escala_normal,angulos_codo.gamma_relb_repC4);
 % % plot(escala_normal,angulos_codo.gamma_relb_repC5);
-% % plottitle=['�ngulo gamma en el codo: + flexi�n'];
+% % plottitle=['ï¿½ngulo gamma en el codo: + flexiï¿½n'];
 % % title(plottitle)
 % 
 f7=figure('visible','off');
@@ -645,7 +667,7 @@ hold on
 % plot(escala_normal,angulos_codo.media_alfa+angulos_codo.desviacion_alfa,'r');
 % plot(escala_normal,angulos_codo.media_alfa-angulos_codo.desviacion_alfa,'b');
 % legend('Media','Media+SD','Media-SD')
-% plottitle=['Curva media �ngulo alfa en el codo: aducci�n'];
+% plottitle=['Curva media ángulo alfa en el codo: aducción'];
 % title(plottitle)
 
 subplot(2,1,1,'Ylim',[40 120],...
@@ -663,7 +685,7 @@ ymin_beta_codo=num2str(ymin,2);
 plot(escala_normal,angulos_codo.media_beta+angulos_codo.desviacion_beta,'r');
 plot(escala_normal,angulos_codo.media_beta-angulos_codo.desviacion_beta,'b');
 legend('Media','Media+SD','Media-SD')
-plottitle=['Curva media �ngulo beta en el codo: rotaci�n interna'];
+plottitle=['Curva media ángulo beta en el codo: rotación interna'];
 title(plottitle)
 
 subplot(2,1,2,'Ylim',[0 120],...
@@ -681,11 +703,11 @@ ymin_gamma_codo=num2str(ymin,2);
 plot(escala_normal,angulos_codo.media_gamma+angulos_codo.desviacion_gamma,'r');
 plot(escala_normal,angulos_codo.media_gamma-angulos_codo.desviacion_gamma,'b');
 legend('Media','Media+SD','Media-SD')
-plottitle=['Cueva media �ngulo gamma en el codo: flexi�n'];
+plottitle=['Cueva media ángulo gamma en el codo: flexión'];
 title(plottitle)
 saveas(gcf,'anguloscodo.jpeg');
 
-% % Momentos en mu�eca
+% % Momentos en muï¿½eca
 % % figure;
 % % 
 % % subplot(3,1,1,'Ylim',[-2 2],...
@@ -698,7 +720,7 @@ saveas(gcf,'anguloscodo.jpeg');
 % % plot(escala_normal,momentos_muneca.m_muneca_xC3);
 % % plot(escala_normal,momentos_muneca.m_muneca_xC4);
 % % plot(escala_normal,momentos_muneca.m_muneca_xC5);
-% % plottitle = ['Momentos proximales en la mu�eca en globales: componente x'];
+% % plottitle = ['Momentos proximales en la muï¿½eca en globales: componente x'];
 % % title(plottitle)
 % % 
 % % subplot(3,1,2,'Ylim',[-2 2],...
@@ -711,7 +733,7 @@ saveas(gcf,'anguloscodo.jpeg');
 % % plot(escala_normal,momentos_muneca.m_muneca_yC3);
 % % plot(escala_normal,momentos_muneca.m_muneca_yC4);
 % % plot(escala_normal,momentos_muneca.m_muneca_yC5);
-% % plottitle = ['Momentos proximales en la mu�eca en globales: componente y'];
+% % plottitle = ['Momentos proximales en la muï¿½eca en globales: componente y'];
 % % title(plottitle)
 % % 
 % % subplot(3,1,3,'Ylim',[-2 2],...
@@ -724,7 +746,7 @@ saveas(gcf,'anguloscodo.jpeg');
 % % plot(escala_normal,momentos_muneca.m_muneca_zC3);
 % % plot(escala_normal,momentos_muneca.m_muneca_zC4);
 % % plot(escala_normal,momentos_muneca.m_muneca_zC5);
-% % plottitle = ['Momentos proximales en la mu�eca en globales: componente z'];
+% % plottitle = ['Momentos proximales en la muï¿½eca en globales: componente z'];
 % % title(plottitle)
 % 
 f8=figure('visible','off');
@@ -743,7 +765,7 @@ ymin_momentox_muneca=num2str(ymin,2);
 plot(escala_normal,momentos_muneca.media_m_muneca_x+momentos_muneca.desviacion_m_muneca_x,'r');
 plot(escala_normal,momentos_muneca.media_m_muneca_x-momentos_muneca.desviacion_m_muneca_x,'b');
 legend('Media','Media+SD','Media-SD')
-plottitle = ['Curva media momentos proximales en la mu�eca: componente x'];
+plottitle = ['Curva media momentos proximales en la muñeca: componente x'];
 title(plottitle)
 
 subplot(3,1,2,'Ylim',[-2 2],...
@@ -761,7 +783,7 @@ ymin_momentoy_muneca=num2str(ymin,2);
 plot(escala_normal,momentos_muneca.media_m_muneca_y+momentos_muneca.desviacion_m_muneca_y,'r');
 plot(escala_normal,momentos_muneca.media_m_muneca_y-momentos_muneca.desviacion_m_muneca_y,'b');
 legend('Media','Media+SD','Media-SD')
-plottitle = ['Media momentos proximales en la mu�eca: componente y'];
+plottitle = ['Media momentos proximales en la muñeca: componente y'];
 title(plottitle) 
 
 subplot(3,1,3,'Ylim',[-2 2],...
@@ -779,11 +801,11 @@ ymin_momentoz_muneca=num2str(ymin,2);
 plot(escala_normal,momentos_muneca.media_m_muneca_z+momentos_muneca.desviacion_m_muneca_z,'r');
 plot(escala_normal,momentos_muneca.media_m_muneca_z-momentos_muneca.desviacion_m_muneca_z,'b');
 legend('Media','Media+SD','Media-SD')
-plottitle = ['Curva media momentos proximales en la mu�eca: componente z'];
+plottitle = ['Curva media momentos proximales en la muñeca: componente z'];
 title(plottitle)
 saveas(gcf,'momentosmuneca.jpeg');
 
-% % Esfuerzos en mu�eca
+% % Esfuerzos en muï¿½eca
 % % figure;
 % % 
 % % subplot(3,1,1,'Ylim',[-50 50],...
@@ -796,7 +818,7 @@ saveas(gcf,'momentosmuneca.jpeg');
 % % plot(escala_normal,fuerzas_muneca.f_muneca_xC3);
 % % plot(escala_normal,fuerzas_muneca.f_muneca_xC4);
 % % plot(escala_normal,fuerzas_muneca.f_muneca_xC5);
-% % plottitle = ['Fuerzas proximales en la mu�eca en locales: componente x'];
+% % plottitle = ['Fuerzas proximales en la muï¿½eca en locales: componente x'];
 % % title(plottitle)
 % % 
 % % subplot(3,1,2,'Ylim',[-50 50],...
@@ -809,7 +831,7 @@ saveas(gcf,'momentosmuneca.jpeg');
 % % plot(escala_normal,fuerzas_muneca.f_muneca_yC3);
 % % plot(escala_normal,fuerzas_muneca.f_muneca_yC4);
 % % plot(escala_normal,fuerzas_muneca.f_muneca_yC5);
-% % plottitle = ['Fuerzas proximales en la mu�eca en locales: componente y'];
+% % plottitle = ['Fuerzas proximales en la muï¿½eca en locales: componente y'];
 % % title(plottitle)
 % % 
 % % subplot(3,1,3,'Ylim',[-50 50],...
@@ -822,7 +844,7 @@ saveas(gcf,'momentosmuneca.jpeg');
 % % plot(escala_normal,fuerzas_muneca.f_muneca_zC3);
 % % plot(escala_normal,fuerzas_muneca.f_muneca_zC4);
 % % plot(escala_normal,fuerzas_muneca.f_muneca_zC5);
-% % plottitle = ['Fuerzas proximales en la mu�eca en locales: componente z'];
+% % plottitle = ['Fuerzas proximales en la muï¿½eca en locales: componente z'];
 % % title(plottitle)
 % 
 f9=figure('visible','off');
@@ -841,7 +863,7 @@ ymin_fuerzax_muneca=num2str(ymin,2);
 plot(escala_normal,fuerzas_muneca.media_f_muneca_x+fuerzas_muneca.desviacion_f_muneca_x,'r');
 plot(escala_normal,fuerzas_muneca.media_f_muneca_x-fuerzas_muneca.desviacion_f_muneca_x,'b');
 legend('Media','Media+SD','Media-SD')
-plottitle = ['Curva media fuerzas proximales en la mu�eca: componente x'];
+plottitle = ['Curva media fuerzas proximales en la muñeca: componente x'];
 title(plottitle)
 
 subplot(3,1,2,'Ylim',[-50 50],...
@@ -859,7 +881,7 @@ ymin_fuerzay_muneca=num2str(ymin,2);
 plot(escala_normal,fuerzas_muneca.media_f_muneca_y+fuerzas_muneca.desviacion_f_muneca_y,'r');
 plot(escala_normal,fuerzas_muneca.media_f_muneca_y-fuerzas_muneca.desviacion_f_muneca_y,'b');
 legend('Media','Media+SD','Media-SD')
-plottitle = ['Curva media fuerzas proximales en la mu�eca: componente y'];
+plottitle = ['Curva media fuerzas proximales en la muñeca: componente y'];
 title(plottitle)
 
 subplot(3,1,3,'Ylim',[-50 50],...
@@ -877,11 +899,11 @@ ymin_fuerzaz_muneca=num2str(ymin,2);
 plot(escala_normal,fuerzas_muneca.media_f_muneca_z+fuerzas_muneca.desviacion_f_muneca_z,'r');
 plot(escala_normal,fuerzas_muneca.media_f_muneca_z-fuerzas_muneca.desviacion_f_muneca_z,'b');
 legend('Media','Media+SD','Media-SD')
-plottitle = ['Curva media fuerzas proximales en la mu�eca: componente z'];
+plottitle = ['Curva media fuerzas proximales en la muñeca: componente z'];
 title(plottitle)
 saveas(gcf,'fuerzasmuneca.jpeg');
 
-% % Mu�eca
+% % Muï¿½eca
 % % figure;
 % % 
 % % subplot(3,1,1,'Ylim',[-45 45],...
@@ -894,7 +916,7 @@ saveas(gcf,'fuerzasmuneca.jpeg');
 % % plot(escala_normal,angulos_muneca.alfa_rwr_repC3);
 % % plot(escala_normal,angulos_muneca.alfa_rwr_repC4);
 % % plot(escala_normal,angulos_muneca.alfa_rwr_repC5);
-% % plottitle=['�ngulo alfa en la mu�eca: + desviaci�n ulnar'];
+% % plottitle=['ï¿½ngulo alfa en la muï¿½eca: + desviaciï¿½n ulnar'];
 % % title(plottitle)
 % % 
 % % subplot(3,1,2,'Ylim',[-45 45],...
@@ -907,7 +929,7 @@ saveas(gcf,'fuerzasmuneca.jpeg');
 % % plot(escala_normal,angulos_muneca.beta_rwr_repC3);
 % % plot(escala_normal,angulos_muneca.beta_rwr_repC4);
 % % plot(escala_normal,angulos_muneca.beta_rwr_repC5);
-% % plottitle=['�ngulo beta en la mu�eca: + rotaci�n interna'];
+% % plottitle=['ï¿½ngulo beta en la muï¿½eca: + rotaciï¿½n interna'];
 % % title(plottitle)
 % % 
 % % subplot(3,1,3,'Ylim',[-45 45],...
@@ -920,7 +942,7 @@ saveas(gcf,'fuerzasmuneca.jpeg');
 % % plot(escala_normal,angulos_muneca.gamma_rwr_repC3);
 % % plot(escala_normal,angulos_muneca.gamma_rwr_repC4);
 % % plot(escala_normal,angulos_muneca.gamma_rwr_repC5);
-% % plottitle=['�ngulo gamma en la mu�eca: + flexi�n'];
+% % plottitle=['ï¿½ngulo gamma en la muï¿½eca: + flexiï¿½n'];
 % % title(plottitle)
 % 
 f10=figure('visible','off');
@@ -939,7 +961,7 @@ ymin_alpha_muneca=num2str(ymin,2);
 plot(escala_normal,angulos_muneca.media_alfa+angulos_muneca.desviacion_alfa,'r');
 plot(escala_normal,angulos_muneca.media_alfa-angulos_muneca.desviacion_alfa,'b');
 legend('Media','Media+SD','Media-SD')
-plottitle=['Curva media �ngulo alfa en la mu�eca: desviaci�n ulnar'];
+plottitle=['Curva media ángulo alfa en la muñeca: desviación ulnar'];
 title(plottitle)
 
 subplot(3,1,2,'Ylim',[-45 45],...
@@ -957,7 +979,7 @@ ymin_beta_muneca=num2str(ymin,2);
 plot(escala_normal,angulos_muneca.media_beta+angulos_muneca.desviacion_beta,'r');
 plot(escala_normal,angulos_muneca.media_beta-angulos_muneca.desviacion_beta,'b');
 legend('Media','Media+SD','Media-SD')
-plottitle=['Curva media �ngulo beta en la mu�eca: rotaci�n interna'];
+plottitle=['Curva media ángulo beta en la muñeca: rotación interna'];
 title(plottitle)
 
 subplot(3,1,3,'Ylim',[-45 45],...
@@ -975,6 +997,6 @@ ymin_gamma_muneca=num2str(ymin,2);
 plot(escala_normal,angulos_muneca.media_gamma+angulos_muneca.desviacion_gamma,'r');
 plot(escala_normal,angulos_muneca.media_gamma-angulos_muneca.desviacion_gamma,'b');
 legend('Media','Media+SD','Media-SD')
-plottitle=['Curva media �ngulo gamma en la mu�eca: flexi�n'];
+plottitle=['Curva media ángulo gamma en la muñeca: flexión'];
 title(plottitle)
 saveas(gcf,'angulosmuneca.jpeg');
