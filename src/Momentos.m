@@ -1,3 +1,26 @@
+/*
+*    This program is free software: you can redistribute it and/or modify
+*    it under the terms of the GNU General Public License as published by
+*    the Free Software Foundation, either version 3 of the License, or
+*    any later version.
+*
+*    This program is distributed in the hope that it will be useful,
+*    but WITHOUT ANY WARRANTY; without even the implied warranty of
+*    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*    GNU General Public License for more details.
+*
+*    You should have received a copy of the GNU General Public License
+*    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*
+*
+*    Authors: Blanca Larraga García <blanca.larraga@upm.es>
+*             Antonio J. del Ama Espinosa <ajdela@sescam.jccm.es>
+*	          Alvaro Gutierrez Martin <aguti@etsit.upm.es>
+*
+*    Developed in Hospital Nacional de Parapléjicos de Toledo <http://hnparaplejicos.sescam.castillalamancha.es> 
+*          and in Robolabo <http://www.robolabo.etsit.upm.es/>    
+*/
+
 function [m_muneca, m_codo, m_hombro]=Momentos(frames,mnd_ML, amd_ML, amd_AL, acd_AL, acd_BL, agd_BL, MomentosInercia, phi_M,rD_L_mano,rP_L_mano, rot_MA_G, rot_AG_A, phi_A,omega_A, rD_L_anteb,rP_L_anteb, rot_AA_G, rot_BG_A, phi_B,omega_B,rD_L_brazo, rP_L_brazo, rot_BA_G, rot_TG_A);
 %Calculo de los momentos en las articulaciones: ECUACIONES DE EULER-NEWTON-
 
