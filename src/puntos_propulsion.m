@@ -1,4 +1,27 @@
-% OBTENCI”N DE LOS PAR¡METROS CARACTERÕSTICOS DE LA PROPULSI”N EN LOS
+/*
+*    This program is free software: you can redistribute it and/or modify
+*    it under the terms of the GNU General Public License as published by
+*    the Free Software Foundation, either version 3 of the License, or
+*    any later version.
+*
+*    This program is distributed in the hope that it will be useful,
+*    but WITHOUT ANY WARRANTY; without even the implied warranty of
+*    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*    GNU General Public License for more details.
+*
+*    You should have received a copy of the GNU General Public License
+*    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*
+*
+*    Authors: Blanca Larraga Garc√≠a <blanca.larraga@upm.es>
+*             Antonio J. del Ama Espinosa <ajdela@sescam.jccm.es>
+*	          Alvaro Gutierrez Martin <aguti@etsit.upm.es>
+*
+*    Developed in Hospital Nacional de Parapl√©jicos de Toledo <http://hnparaplejicos.sescam.castillalamancha.es> 
+*          and in Robolabo <http://www.robolabo.etsit.upm.es/>    
+*/
+
+% OBTENCI√ìN DE LOS PAR√ÅMETROS CARACTER√çSTICOS DE LA PROPULSI√ìN EN LOS
 % SIGUIENTES INSTANTES:
 % TOP CENTER
 % HANDS OFF
@@ -9,8 +32,8 @@
 
 for i=1:size(top_center,2)-1
 % ----------------------------------------------------------------------- %
-    % ObtenciÛn de todas las variables en el instante TOP CENTER.
-    % MU—ECA
+    % Obtenci√≥n de todas las variables en el instante TOP CENTER.
+    % MU√ëECA
     %  Angulos
     muneca_top_center.alfa(i) = alfa_rwr(top_center(i));
     muneca_top_center.beta(i) = beta_rwr(top_center(i));
@@ -53,11 +76,11 @@ for i=1:size(top_center,2)-1
     hombro_top_center.m_hombro_z(i) = m_hombro(3,top_center(i));
     
 % ----------------------------------------------------------------------- %
-    % C·lculo del HANDS OFF.
-    % Hands off est· calculado en la variable cont_down
-    % ObtenciÛn de todas las variables en el instante HANDS OFF.     
+    % C√°lculo del HANDS OFF.
+    % Hands off est√° calculado en la variable cont_down
+    % Obtenci√≥n de todas las variables en el instante HANDS OFF.     
     
-    % MU—ECA
+    % MU√ëECA
     % Angulos
     muneca_hands_off.alfa(i) = alfa_rwr(cont_down(i));
     muneca_hands_off.beta(i) = beta_rwr(cont_down(i));
@@ -101,10 +124,10 @@ for i=1:size(top_center,2)-1
     hombro_hands_off.m_hombro_z(i) = m_hombro(3,cont_down(i));
     
 % ----------------------------------------------------------------------- %
-    % C·lculo del HANDS CONTACT
-    % Hand contact est· calculado en la variable cont_up
-    % ObtenciÛn de todas las variables en el instante HANDS CONTACT. 
-    % MU—ECA
+    % C√°lculo del HANDS CONTACT
+    % Hand contact est√° calculado en la variable cont_up
+    % Obtenci√≥n de todas las variables en el instante HANDS CONTACT. 
+    % MU√ëECA
     % Angulos
     muneca_hands_contact.alfa(i) = alfa_rwr(cont_up(i));
     muneca_hands_contact.beta(i) = beta_rwr(cont_up(i));
@@ -147,8 +170,8 @@ for i=1:size(top_center,2)-1
     hombro_hands_contact.m_hombro_z(i) = m_hombro(3,cont_up(i));
 
 % ----------------------------------------------------------------------- %
-    % ObtenciÛn de todas las variables en el instante FOLLOW THRU.
-    % MU—ECA
+    % Obtenci√≥n de todas las variables en el instante FOLLOW THRU.
+    % MU√ëECA
     % Angulos
     muneca_follow_thru.alfa(i) = alfa_rwr(follow(i));
     muneca_follow_thru.beta(i) = beta_rwr(follow(i));
@@ -194,8 +217,8 @@ for i=1:size(top_center,2)-1
     hombro_follow_thru.m_hombro_z(i) = m_hombro(3,follow(i));
 
 % ----------------------------------------------------------------------- %
-    % ObtenciÛn de todas las variables en el instante ARM RETURN.
-    % MU—ECA
+    % Obtenci√≥n de todas las variables en el instante ARM RETURN.
+    % MU√ëECA
     % Angulos
     muneca_arm_return.alfa(i) = alfa_rwr(armreturn(i));
     muneca_arm_return.beta(i) = beta_rwr(armreturn(i));
@@ -241,7 +264,7 @@ for i=1:size(top_center,2)-1
     hombro_arm_return.m_hombro_z(i) = m_hombro(3,armreturn(i));
 end
 
-%% REORDENACI”N DE LA DEFINICI”N DE LOS ¡NGULOS
+%% REORDENACI√ìN DE LA DEFINICI√ìN DE LOS √ÅNGULOS
 muneca_hands_contact.desv_rad = -muneca_hands_contact.alfa;
 muneca_hands_contact.flexion = muneca_hands_contact.gamma;
 % rmfield(muneca_hands_contact,{'alfa','beta','gamma'}); % Borra los campos
@@ -312,45 +335,45 @@ hombro_arm_return.plano_elev = hombro_arm_return.beta;
 % rmfield(hombro_arm_return,{'alfa','beta','gamma'}); % Borra los campos
 % alfa, beta y gamma del cellArray
 
-%% OBTENCION DE LOS PAR¡METROS MEDIOS EN LOS INSTANTES HC, TC, HO, FT, AP
+%% OBTENCION DE LOS PAR√ÅMETROS MEDIOS EN LOS INSTANTES HC, TC, HO, FT, AP
 % de los ciclos 8 a 12
     j=1;
 for i=1:5
-    b1(1,j) = muneca_hands_contact.alfa(i); %MuÒeca Hands Contact desvaciÛn ulnar
-    b1(2,j) = muneca_top_center.alfa(i); %MuÒeca Top Center desviaciÛn ulnar
-    b1(3,j) = muneca_hands_off.alfa(i); %MuÒeca Hands Off desviaciÛn ulnar
-    b1(4,j) = muneca_follow_thru.alfa(i); %MuÒeca Follow Thru desviaciÛn ulnar
-    b1(5,j) = muneca_arm_return.alfa(i); %MuÒeca Arm Preparation desviaciÛn ulnar
-    b1(6,j) = muneca_hands_contact.gamma(i); %MuÒeca Hands Contact flexiÛn
-    b1(7,j) = muneca_top_center.gamma(i); %MuÒeca Top Center flexiÛn
-    b1(8,j) = muneca_hands_off.gamma(i); %MuÒeca Hands Off flexiÛn
-    b1(9,j) = muneca_follow_thru.gamma(i); %MuÒeca Follow Thru flexiÛn
-    b1(10,j) = muneca_arm_return.gamma(i); %MuÒeca Arm Preparation flexiÛn
-    b1(11,j) = codo_hands_contact.gamma(i); %Codo Hands Contact flexiÛn
-    b1(12,j) = codo_top_center.gamma(i); %Codo Top Center flexiÛn
-    b1(13,j) = codo_hands_off.gamma(i); %Codo Hands Off flexiÛn
-    b1(14,j) = codo_follow_thru.gamma(i); %Codo Follow Trhu flexiÛn
-    b1(15,j) = codo_arm_return.gamma(i); %Codo Arm Preparation flexiÛn
-    b1(16,j) = codo_hands_contact.beta(i); %Codo Hands Contact pronaciÛn
-    b1(17,j) = codo_top_center.beta(i); %Codo Top Center pronaciÛn
-    b1(18,j) = codo_hands_off.beta(i); %Codo Hands Off pronaciÛn
-    b1(19,j) = codo_follow_thru.beta(i); %Codo Follow Trhu pronaciÛn
-    b1(20,j) = codo_arm_return.beta(i); %Codo Arm Preparation pronaciÛn
-    b1(21,j) = hombro_hands_contact.alfa(i); %Hombro Hands Contact elevaciÛn de hombro
-    b1(22,j) = hombro_top_center.alfa(i); %Hombro Top Center elevaciÛn de hombro
-    b1(23,j) = hombro_hands_off.alfa(i); %Hombro Hands Off elevaciÛn de hombro
-    b1(24,j) = hombro_follow_thru.alfa(i); %Hombro Follow Trhu elevaciÛn de hombro
-    b1(25,j) = hombro_arm_return.alfa(i); %Hombro Arm Preparation elevaciÛn de hombro
-    b1(26,j) = hombro_hands_contact.gamma(i); %Hombro Hands Contact rotaciÛn interna
-    b1(27,j) = hombro_top_center.gamma(i); %Hombro Top Center rotaciÛn interna
-    b1(28,j) = hombro_hands_off.gamma(i); %Hombro Hands Off rotaciÛn interna
-    b1(29,j) = hombro_follow_thru.gamma(i); %Hombro Follow Trhu rotaciÛn interna
-    b1(30,j) = hombro_arm_return.gamma(i); %Hombro Arm Preparation rotaciÛn interna
-    b1(31,j) = hombro_hands_contact.beta(i); %Hombro Hands Contact aducciÛn
-    b1(32,j) = hombro_top_center.beta(i); %Hombro Top Center aducciÛn
-    b1(33,j) = hombro_hands_off.beta(i); %Hombro Hands Off aducciÛn
-    b1(34,j) = hombro_follow_thru.beta(i); %Hombro Follow Trhu aducciÛn
-    b1(35,j) = hombro_arm_return.beta(i); %Hombro Arm Preparation aducciÛn
+    b1(1,j) = muneca_hands_contact.alfa(i); %Mu√±eca Hands Contact desvaci√≥n ulnar
+    b1(2,j) = muneca_top_center.alfa(i); %Mu√±eca Top Center desviaci√≥n ulnar
+    b1(3,j) = muneca_hands_off.alfa(i); %Mu√±eca Hands Off desviaci√≥n ulnar
+    b1(4,j) = muneca_follow_thru.alfa(i); %Mu√±eca Follow Thru desviaci√≥n ulnar
+    b1(5,j) = muneca_arm_return.alfa(i); %Mu√±eca Arm Preparation desviaci√≥n ulnar
+    b1(6,j) = muneca_hands_contact.gamma(i); %Mu√±eca Hands Contact flexi√≥n
+    b1(7,j) = muneca_top_center.gamma(i); %Mu√±eca Top Center flexi√≥n
+    b1(8,j) = muneca_hands_off.gamma(i); %Mu√±eca Hands Off flexi√≥n
+    b1(9,j) = muneca_follow_thru.gamma(i); %Mu√±eca Follow Thru flexi√≥n
+    b1(10,j) = muneca_arm_return.gamma(i); %Mu√±eca Arm Preparation flexi√≥n
+    b1(11,j) = codo_hands_contact.gamma(i); %Codo Hands Contact flexi√≥n
+    b1(12,j) = codo_top_center.gamma(i); %Codo Top Center flexi√≥n
+    b1(13,j) = codo_hands_off.gamma(i); %Codo Hands Off flexi√≥n
+    b1(14,j) = codo_follow_thru.gamma(i); %Codo Follow Trhu flexi√≥n
+    b1(15,j) = codo_arm_return.gamma(i); %Codo Arm Preparation flexi√≥n
+    b1(16,j) = codo_hands_contact.beta(i); %Codo Hands Contact pronaci√≥n
+    b1(17,j) = codo_top_center.beta(i); %Codo Top Center pronaci√≥n
+    b1(18,j) = codo_hands_off.beta(i); %Codo Hands Off pronaci√≥n
+    b1(19,j) = codo_follow_thru.beta(i); %Codo Follow Trhu pronaci√≥n
+    b1(20,j) = codo_arm_return.beta(i); %Codo Arm Preparation pronaci√≥n
+    b1(21,j) = hombro_hands_contact.alfa(i); %Hombro Hands Contact elevaci√≥n de hombro
+    b1(22,j) = hombro_top_center.alfa(i); %Hombro Top Center elevaci√≥n de hombro
+    b1(23,j) = hombro_hands_off.alfa(i); %Hombro Hands Off elevaci√≥n de hombro
+    b1(24,j) = hombro_follow_thru.alfa(i); %Hombro Follow Trhu elevaci√≥n de hombro
+    b1(25,j) = hombro_arm_return.alfa(i); %Hombro Arm Preparation elevaci√≥n de hombro
+    b1(26,j) = hombro_hands_contact.gamma(i); %Hombro Hands Contact rotaci√≥n interna
+    b1(27,j) = hombro_top_center.gamma(i); %Hombro Top Center rotaci√≥n interna
+    b1(28,j) = hombro_hands_off.gamma(i); %Hombro Hands Off rotaci√≥n interna
+    b1(29,j) = hombro_follow_thru.gamma(i); %Hombro Follow Trhu rotaci√≥n interna
+    b1(30,j) = hombro_arm_return.gamma(i); %Hombro Arm Preparation rotaci√≥n interna
+    b1(31,j) = hombro_hands_contact.beta(i); %Hombro Hands Contact aducci√≥n
+    b1(32,j) = hombro_top_center.beta(i); %Hombro Top Center aducci√≥n
+    b1(33,j) = hombro_hands_off.beta(i); %Hombro Hands Off aducci√≥n
+    b1(34,j) = hombro_follow_thru.beta(i); %Hombro Follow Trhu aducci√≥n
+    b1(35,j) = hombro_arm_return.beta(i); %Hombro Arm Preparation aducci√≥n
     
     c1(1,j) = muneca_hands_contact.f_muneca_x(i);
     c1(2,j) = muneca_hands_contact.f_muneca_y(i);
