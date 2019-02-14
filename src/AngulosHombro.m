@@ -17,8 +17,8 @@
 *             Antonio J. del Ama Espinosa <ajdela@sescam.jccm.es>
 *	          Alvaro Gutierrez Martin <aguti@etsit.upm.es>
 *
-*    Developed in Robolabo <http://www.robolabo.etsit.upm.es/>
-*          and in Hospital Nacional de Parapléjicos de Toledo <http://hnparaplejicos.sescam.castillalamancha.es>       
+*    Developed in Hospital Nacional de Parapléjicos de Toledo <http://hnparaplejicos.sescam.castillalamancha.es> 
+*          and in Robolabo <http://www.robolabo.etsit.upm.es/>    
 */
 function [gamma_rsho, beta_rsho, alfa_rsho]=AngulosHombro(frames,rot_TA_G, rot_BA_G);
 %-----------------ANGULOS DE LA ARTICULACION DEL HOMBRO-------------------%
