@@ -1,78 +1,101 @@
-%% SALIDA DE LAS VARIABLES CINEM罷ICAS EN ORDEN PARA LA BASE DE DATOS
-tronflexmax = -a2(6); %Maximo de flexi髇 de tronco
-tronexmax = a2(5); %M醲imo de extensi髇 de tronco
-tronflexrom = abs(tronflexmax-tronexmax); %ROM flexoextensi髇
-tronrotmax_izd = a2(3); %M醲imo de rotaci髇 de tronco (positivo izda)
-tronrotmin_izd = a2(4); %M韓imo de rotaci髇 de tronco (positivo izda)
-tronrotrom_izd_der = abs(tronrotmax_izd-tronrotmin_izd); %ROM rotaci髇
-tronbalmax = a2(1); %M醲imo de balanceo de tronco (positivo hacia la derecha)
-tronbalmin = a2(2); %M韓imo de balanceo de tronco (positivo hacia la derecha)
+/*
+*    This program is free software: you can redistribute it and/or modify
+*    it under the terms of the GNU General Public License as published by
+*    the Free Software Foundation, either version 3 of the License, or
+*    any later version.
+*
+*    This program is distributed in the hope that it will be useful,
+*    but WITHOUT ANY WARRANTY; without even the implied warranty of
+*    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*    GNU General Public License for more details.
+*
+*    You should have received a copy of the GNU General Public License
+*    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*
+*
+*    Authors: Blanca Larraga Garc铆a <blanca.larraga@upm.es>
+*             Antonio J. del Ama Espinosa <ajdela@sescam.jccm.es>
+*	          Alvaro Gutierrez Martin <aguti@etsit.upm.es>
+*
+*    Developed in Hospital Nacional de Parapl茅jicos de Toledo <http://hnparaplejicos.sescam.castillalamancha.es> 
+*          and in Robolabo <http://www.robolabo.etsit.upm.es/>    
+*/
+
+%% SALIDA DE LAS VARIABLES CINEM脕TICAS EN ORDEN PARA LA BASE DE DATOS
+tronflexmax = -a2(6); %Maximo de flexi贸n de tronco
+tronexmax = a2(5); %M谩ximo de extensi贸n de tronco
+tronflexrom = abs(tronflexmax-tronexmax); %ROM flexoextensi贸n
+tronrotmax_izd = a2(3); %M谩ximo de rotaci贸n de tronco (positivo izda)
+tronrotmin_izd = a2(4); %M铆nimo de rotaci贸n de tronco (positivo izda)
+tronrotrom_izd_der = abs(tronrotmax_izd-tronrotmin_izd); %ROM rotaci贸n
+tronbalmax = a2(1); %M谩ximo de balanceo de tronco (positivo hacia la derecha)
+tronbalmin = a2(2); %M铆nimo de balanceo de tronco (positivo hacia la derecha)
 tronbalrom = abs(tronbalmax-tronbalmin); %ROM balanceo de tronco
 
-munulmax = a2(25); %M醲imo desviaci髇 ulnar
-munramax = -a2(26); %M韓imo desviaci髇 radial
-munromulra = abs(munulmax-munramax); %ROM Desviaci髇 radial-ulnar
+munulmax = a2(25); %M谩ximo desviaci贸n ulnar
+munramax = -a2(26); %M铆nimo desviaci贸n radial
+munromulra = abs(munulmax-munramax); %ROM Desviaci贸n radial-ulnar
 
-munmaxlfex = a2(29); %M醲imo de flexi髇 de mu馿ca
-munminflex = -a2(30); %M醲imo de extensi髇 de mu馿ca
-munromflex = abs(munmaxlfex-munminflex); %ROM flexoextensi髇 de mu馿ca
+munmaxlfex = a2(29); %M谩ximo de flexi贸n de mu帽eca
+munminflex = -a2(30); %M谩ximo de extensi贸n de mu帽eca
+munromflex = abs(munmaxlfex-munminflex); %ROM flexoextensi贸n de mu帽eca
 
-codflexmax = a2(47); %Maximo de flexi髇 de codo
-codflexmin = a2(48); %M韓imo de flexi髇 de codo
-codromflex = abs(codflexmax-codflexmin); %ROM Flexiextensi髇 de codo
+codflexmax = a2(47); %Maximo de flexi贸n de codo
+codflexmin = a2(48); %M铆nimo de flexi贸n de codo
+codromflex = abs(codflexmax-codflexmin); %ROM Flexiextensi贸n de codo
 
-codpromax = a2(45); %Maximo de pronaci髇 del antebrazo
-codpromin = a2(46); %M韓imo de pronaci髇 del antebrazo
-codprorom = abs(codpromax-codpromin); %ROM pronoupinaci髇 del antebrazo
+codpromax = a2(45); %Maximo de pronaci贸n del antebrazo
+codpromin = a2(46); %M铆nimo de pronaci贸n del antebrazo
+codprorom = abs(codpromax-codpromin); %ROM pronoupinaci贸n del antebrazo
 
-homflexmax = a2(7); %M醲imo de elevaci髇 de hombro
-homflexmin = a2(8); %M韓imo de elevaci髇 de hombro
-homromflex = abs(homflexmax-homflexmin); %ROM de elevaci髇 de hombro
+homflexmax = a2(7); %M谩ximo de elevaci贸n de hombro
+homflexmin = a2(8); %M铆nimo de elevaci贸n de hombro
+homromflex = abs(homflexmax-homflexmin); %ROM de elevaci贸n de hombro
 
-homrotmax = a2(11); %M醲imo de rotaci髇 interna del hombro
-homrotmin = a2(12); %M韓imo de rotaci髇 interna del hombro
-homrotrom = abs(homrotmax-homrotmin); %ROM de rotaci髇 interna del hombro
+homrotmax = a2(11); %M谩ximo de rotaci贸n interna del hombro
+homrotmin = a2(12); %M铆nimo de rotaci贸n interna del hombro
+homrotrom = abs(homrotmax-homrotmin); %ROM de rotaci贸n interna del hombro
 
-homadumax = a2(9); %M醲imo de aducci髇 (plano de elevaci髇 del hombro)
-homadumon = a2(10); %M韓imo de aducci髇 (plano de elevaci髇 del hombro)
-homadurom = abs(homadumax-homadumon); %ROM aducci髇-abducci髇 (plano de elevaci髇)
+homadumax = a2(9); %M谩ximo de aducci贸n (plano de elevaci贸n del hombro)
+homadumon = a2(10); %M铆nimo de aducci贸n (plano de elevaci贸n del hombro)
+homadurom = abs(homadumax-homadumon); %ROM aducci贸n-abducci贸n (plano de elevaci贸n)
 
-munhcul = b2(1); %Mu馿ca Hands Contact desvaci髇 ulnar
-muntcul = b2(2); %Mu馿ca Top Center desviaci髇 ulnar
-munhoul = b2(3); %Mu馿ca Hands Off desviaci髇 ulnar
-munfthul = b2(4); %Mu馿ca Follow Thru desviaci髇 ulnar
-munapul = b2(5); %Mu馿ca Arm Preparation desviaci髇 ulnar
-munhcflex = b2(6); %Mu馿ca Hands Contact flexi髇
-muntcflex = b2(7); %Mu馿ca Top Center flexi髇
-munhoflex = b2(8); %Mu馿ca Hands Off flexi髇
-munfthflex = b2(9); %Mu馿ca Follow Thru flexi髇
-munapflex = b2(10); %Mu馿ca Arm Preparation flexi髇
-codhcflex = b2(11); %Codo Hands Contact flexi髇
-codtcflex = b2(12); %Codo Top Center flexi髇
-codhoflex = b2(13); %Codo Hands Off flexi髇
-codfthflex = b2(14); %Codo Follow Trhu flexi髇
-codapflex = b2(15); %Codo Arm Preparation flexi髇
-codhcpro = b2(16); %Codo Hands Contact pronaci髇
-codtcpro = b2(17); %Codo Top Center pronaci髇
-codhopro = b2(18); %Codo Hands Off pronaci髇
-codfthpro = b2(19); %Codo Follow Trhu pronaci髇
-codappro = b2(20); %Codo Arm Preparation pronaci髇
-homhcelev = b2(21); %Hombro Hands Contact elevaci髇 de hombro
-homtcelev = b2(22); %Hombro Top Center elevaci髇 de hombro
-homhoelev = b2(23); %Hombro Hands Off elevaci髇 de hombro
-homfthelev = b2(24); %Hombro Follow Trhu elevaci髇 de hombro
-homapelev = b2(25); %Hombro Arm Preparation elevaci髇 de hombro
-homhcrot = b2(26); %Hombro Hands Contact rotaci髇 interna
-homtcrot = b2(27); %Hombro Top Center rotaci髇 interna
-homhorot = b2(28); %Hombro Hands Off rotaci髇 interna
-homfthrot = b2(29); %Hombro Follow Trhu rotaci髇 interna
-homaprot = b2(30); %Hombro Arm Preparation rotaci髇 interna
-homhcadu = b2(31); %Hombro Hands Contact aducci髇
-homtcpadu = b2(32); %Hombro Top Center aducci髇
-homhoadu = b2(33); %Hombro Hands Off aducci髇
-homfthadu = b2(34); %Hombro Follow Trhu aducci髇
-homapadu = b2(35); %Hombro Arm Preparation aducci髇
-%% SALIDA DE LAS VARIABLES CIN蒚ICAS EN ORDEN PARA LA BASE DE DATOS
+munhcul = b2(1); %Mu帽eca Hands Contact desvaci贸n ulnar
+muntcul = b2(2); %Mu帽eca Top Center desviaci贸n ulnar
+munhoul = b2(3); %Mu帽eca Hands Off desviaci贸n ulnar
+munfthul = b2(4); %Mu帽eca Follow Thru desviaci贸n ulnar
+munapul = b2(5); %Mu帽eca Arm Preparation desviaci贸n ulnar
+munhcflex = b2(6); %Mu帽eca Hands Contact flexi贸n
+muntcflex = b2(7); %Mu帽eca Top Center flexi贸n
+munhoflex = b2(8); %Mu帽eca Hands Off flexi贸n
+munfthflex = b2(9); %Mu帽eca Follow Thru flexi贸n
+munapflex = b2(10); %Mu帽eca Arm Preparation flexi贸n
+codhcflex = b2(11); %Codo Hands Contact flexi贸n
+codtcflex = b2(12); %Codo Top Center flexi贸n
+codhoflex = b2(13); %Codo Hands Off flexi贸n
+codfthflex = b2(14); %Codo Follow Trhu flexi贸n
+codapflex = b2(15); %Codo Arm Preparation flexi贸n
+codhcpro = b2(16); %Codo Hands Contact pronaci贸n
+codtcpro = b2(17); %Codo Top Center pronaci贸n
+codhopro = b2(18); %Codo Hands Off pronaci贸n
+codfthpro = b2(19); %Codo Follow Trhu pronaci贸n
+codappro = b2(20); %Codo Arm Preparation pronaci贸n
+homhcelev = b2(21); %Hombro Hands Contact elevaci贸n de hombro
+homtcelev = b2(22); %Hombro Top Center elevaci贸n de hombro
+homhoelev = b2(23); %Hombro Hands Off elevaci贸n de hombro
+homfthelev = b2(24); %Hombro Follow Trhu elevaci贸n de hombro
+homapelev = b2(25); %Hombro Arm Preparation elevaci贸n de hombro
+homhcrot = b2(26); %Hombro Hands Contact rotaci贸n interna
+homtcrot = b2(27); %Hombro Top Center rotaci贸n interna
+homhorot = b2(28); %Hombro Hands Off rotaci贸n interna
+homfthrot = b2(29); %Hombro Follow Trhu rotaci贸n interna
+homaprot = b2(30); %Hombro Arm Preparation rotaci贸n interna
+homhcadu = b2(31); %Hombro Hands Contact aducci贸n
+homtcpadu = b2(32); %Hombro Top Center aducci贸n
+homhoadu = b2(33); %Hombro Hands Off aducci贸n
+homfthadu = b2(34); %Hombro Follow Trhu aducci贸n
+homapadu = b2(35); %Hombro Arm Preparation aducci贸n
+%% SALIDA DE LAS VARIABLES CIN脡TICAS EN ORDEN PARA LA BASE DE DATOS
 cad = stroke_med;
 vel = vel_prop_med;
 dist = vel/cad;
