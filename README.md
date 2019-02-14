@@ -1,5 +1,7 @@
 # UpperLimbMotion
 
+An application has been developed which could be found in the bin folder. In order to run it, the MATLAB Runtime is needed which is an open source standalone set of shared libraries which allows the execution of compiled MATLAB applications as the one created. The structure of what is behind the application is explained in the src folder in which all the MATLAB code is shown.
+
 Introduction
 ==============
 
