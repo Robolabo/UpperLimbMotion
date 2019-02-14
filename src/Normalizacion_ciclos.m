@@ -1,4 +1,27 @@
-%------------NORMALIZACI�N DE CICLOS Y REPRESENTACI�N GR�FICA------------%
+/*
+*    This program is free software: you can redistribute it and/or modify
+*    it under the terms of the GNU General Public License as published by
+*    the Free Software Foundation, either version 3 of the License, or
+*    any later version.
+*
+*    This program is distributed in the hope that it will be useful,
+*    but WITHOUT ANY WARRANTY; without even the implied warranty of
+*    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*    GNU General Public License for more details.
+*
+*    You should have received a copy of the GNU General Public License
+*    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*
+*
+*    Authors: Blanca Larraga García <blanca.larraga@upm.es>
+*             Antonio J. del Ama Espinosa <ajdela@sescam.jccm.es>
+*	          Alvaro Gutierrez Martin <aguti@etsit.upm.es>
+*
+*    Developed in Hospital Nacional de Parapléjicos de Toledo <http://hnparaplejicos.sescam.castillalamancha.es> 
+*          and in Robolabo <http://www.robolabo.etsit.upm.es/>    
+*/
+
+%------------NORMALIZACIÓN DE CICLOS Y REPRESENTACIÓN GRÁFICA------------%
 
 escala_normal = 0:1/200:1;
 k = 1;
@@ -76,7 +99,7 @@ for i=1:7
     max_ciclos_gamma_relb(i) = max(gamma_relb_rep);
     min_ciclos_gamma_relb(i) = min(gamma_relb_rep);
 
-% Angulos de la mu�eca
+% Angulos de la muñeca
     alfa_rwr_rep = alfa_rwr(cont_up(i):cont_up(i+1));
     beta_rwr_rep = beta_rwr(cont_up(i):cont_up(i+1));
     gamma_rwr_rep = gamma_rwr(cont_up(i):cont_up(i+1));
@@ -100,7 +123,7 @@ for i=1:7
     max_ciclos_gamma_rwr(i) = max(gamma_rwr_rep);
     min_ciclos_gamma_rwr(i) = min(gamma_rwr_rep);
     
-%% Fuerzas proximales en la mu�eca (locales)
+%% Fuerzas proximales en la muñeca (locales)
     f_muneca_x = f_muneca(1,(cont_up(i):cont_up(i+1)));
     f_muneca_y = f_muneca(2,(cont_up(i):cont_up(i+1)));
     f_muneca_z = f_muneca(3,(cont_up(i):cont_up(i+1)));
@@ -172,7 +195,7 @@ for i=1:7
     max_ciclos_f_hombro_z(i) = max(f_hombro_z);
     min_ciclos_f_hombro_z(i) = min(f_hombro_z);
     
-% Momentos proximales en la mu�eca (globales)
+% Momentos proximales en la muñeca (globales)
     m_muneca_x = m_muneca(1,(cont_up(i):cont_up(i+1)));
     m_muneca_y = m_muneca(2,(cont_up(i):cont_up(i+1)));
     m_muneca_z = m_muneca(3,(cont_up(i):cont_up(i+1)));
@@ -246,7 +269,7 @@ for i=1:7
     min_ciclos_m_hombro_z(i) = min(m_hombro_z);
 end
 
-%% CALCULO DE LOS M�XIMOS Y MINIMOS DE TODOS LOS PAR�METROS POR CICLO
+%% CALCULO DE LOS MÁXIMOS Y MINIMOS DE TODOS LOS PARÁMETROS POR CICLO
 max_alfa_tr_ciclos = max(max_ciclos_alfa_tr);
 min_alfa_tr_ciclos = min(min_ciclos_alfa_tr);
 
@@ -439,7 +462,7 @@ for i = 1:size(escala_normal,2)
         (angulos_codo.gamma_relb_repC3(i)-angulos_codo.media_gamma(i))^2+...
         (angulos_codo.gamma_relb_repC4(i)-angulos_codo.media_gamma(i))^2+...
         (angulos_codo.gamma_relb_repC5(i)-angulos_codo.media_gamma(i))^2));
-% Angulos de la mu�eca
+% Angulos de la muñeca
     angulos_muneca.media_alfa(i) = (angulos_muneca.alfa_rwr_repC1(i)+...
         angulos_muneca.alfa_rwr_repC2(i)+angulos_muneca.alfa_rwr_repC3(i)+...
         angulos_muneca.alfa_rwr_repC4(i)+angulos_muneca.alfa_rwr_repC5(i))/5;
@@ -473,7 +496,7 @@ for i = 1:size(escala_normal,2)
         (angulos_muneca.gamma_rwr_repC4(i)-angulos_muneca.media_gamma(i))^2+...
         (angulos_muneca.gamma_rwr_repC5(i)-angulos_muneca.media_gamma(i))^2));
 
-% Fuerzas proximales en la mu�eca (locales)
+% Fuerzas proximales en la muñeca (locales)
     fuerzas_muneca.media_f_muneca_x(i) = (fuerzas_muneca.f_muneca_xC1(i)+...
         fuerzas_muneca.f_muneca_xC2(i)+fuerzas_muneca.f_muneca_xC3(i)+...
         fuerzas_muneca.f_muneca_xC4(i)+fuerzas_muneca.f_muneca_xC5(i))/5;
@@ -581,7 +604,7 @@ for i = 1:size(escala_normal,2)
 
     fuerzas_hombro.resultanteF(i) = sqrt((fuerzas_hombro.media_f_hombro_x(i))^2+...
         (fuerzas_hombro.media_f_hombro_x(i))^2+(fuerzas_hombro.media_f_hombro_x(i))^2);
-% Momentos proximales en la mu�eca (globales)
+% Momentos proximales en la muñeca (globales)
     momentos_muneca.media_m_muneca_x(i) = (momentos_muneca.m_muneca_xC1(i)+...
         momentos_muneca.m_muneca_xC2(i)+momentos_muneca.m_muneca_xC3(i)+...
         momentos_muneca.m_muneca_xC4(i)+momentos_muneca.m_muneca_xC5(i))/5;
@@ -691,7 +714,7 @@ for i = 1:size(escala_normal,2)
 
 end
 
-%% CALCULO DE LOS M�XIMOS Y MINIMOS DE TODOS LOS PAR�METROS DEL CICLO MEDIO
+%% CALCULO DE LOS MÁXIMOS Y MINIMOS DE TODOS LOS PARÁMETROS DEL CICLO MEDIO
 max_alfa_tr_med = max(angulos_tronco.media_alfa);
 min_alfa_tr_med = min(angulos_tronco.media_alfa);
 max_beta_tr_med = max(angulos_tronco.media_beta);
@@ -699,7 +722,7 @@ min_beta_tr_med = min(angulos_tronco.media_beta);
 max_gamma_tr_med = max(angulos_tronco.media_gamma);
 min_gamma_tr_med = min(angulos_tronco.media_gamma);
 
-% Mu�eca
+% Muñeca
 max_alfa_rwr_med = max(angulos_muneca.media_alfa);
 min_alfa_rwr_med = min(angulos_muneca.media_alfa);
 max_beta_rwr_med = max(angulos_muneca.media_beta);
@@ -776,9 +799,9 @@ min_m_hombro_y_med = min(momentos_hombro.media_m_hombro_y);
 
 max_m_hombro_z_med = max(momentos_hombro.media_m_hombro_z);
 min_m_hombro_z_med = min(momentos_hombro.media_m_hombro_z);
-%% CALCULO DE LAS MEDIAS DE LOS PAR�METROS ARTICULARES
-% EN LOS CICLOS 8 A 12. TOMA LOS M�XIMOS DE LOS CICLOS Y HACE LA MEDIA DE
-% LOS M�XIMOS/M�NIMOS (NO EL MAXIMO/M�NIMO DEL CICLO MEDIO)
+%% CALCULO DE LAS MEDIAS DE LOS PARÁMETROS ARTICULARES
+% EN LOS CICLOS 8 A 12. TOMA LOS MÁXIMOS DE LOS CICLOS Y HACE LA MEDIA DE
+% LOS MÁXIMOS/MÍNIMOS (NO EL MAXIMO/MÍNIMO DEL CICLO MEDIO)
     j=1;
 for i=1:7
     a1(1,j) = max_ciclos_alfa_tr(i);
@@ -809,7 +832,7 @@ for i=1:7
     a1(23,j) = max_ciclos_m_hombro_z(i);
     a1(24,j) = min_ciclos_m_hombro_z(i);
     
-    % Mu�eca
+    % Muñeca
     a1(25,j) = max_ciclos_alfa_rwr(i);
     a1(26,j) = min_ciclos_alfa_rwr(i);
     a1(27,j) = max_ciclos_beta_rwr(i);
