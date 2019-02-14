@@ -17,10 +17,9 @@
 *             Antonio J. del Ama Espinosa <ajdela@sescam.jccm.es>
 *	          Alvaro Gutierrez Martin <aguti@etsit.upm.es>
 *
-*    Developed in Robolabo <http://www.robolabo.etsit.upm.es/>
-*          and in Hospital Nacional de Parapléjicos de Toledo <http://hnparaplejicos.sescam.castillalamancha.es>       
+*    Developed in Hospital Nacional de Parapléjicos de Toledo <http://hnparaplejicos.sescam.castillalamancha.es> 
+*          and in Robolabo <http://www.robolabo.etsit.upm.es/>    
 */
-
 
 function [gamma_relb, beta_relb, alfa_relb]=AngulosCodo(frames, rot_BA_G, rot_AA_G);
 
