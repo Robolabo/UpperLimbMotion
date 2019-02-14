@@ -8,9 +8,9 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-Authors: Blanca Larraga García <blanca.larraga@upm.es>
-         Antonio J. del Ama Espinosa <ajdela@sescam.jccm.es>
-	       Alvaro Gutierrez Martin <aguti@etsit.upm.es>
+Authors: Blanca Larraga García <blanca.larraga@upm.es>, 
+         Antonio J. del Ama Espinosa <ajdela@sescam.jccm.es> , A
+	 Álvaro Gutierrez Martin <aguti@etsit.upm.es>
 
 Developed in Hospital Nacional de Parapléjicos de Toledo <http://hnparaplejicos.sescam.castillalamancha.es>  and in Robolabo <http://www.robolabo.etsit.upm.es/> 
 
