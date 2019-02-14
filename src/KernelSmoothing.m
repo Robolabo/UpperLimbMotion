@@ -1,3 +1,26 @@
+/*
+*    This program is free software: you can redistribute it and/or modify
+*    it under the terms of the GNU General Public License as published by
+*    the Free Software Foundation, either version 3 of the License, or
+*    any later version.
+*
+*    This program is distributed in the hope that it will be useful,
+*    but WITHOUT ANY WARRANTY; without even the implied warranty of
+*    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*    GNU General Public License for more details.
+*
+*    You should have received a copy of the GNU General Public License
+*    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*
+*
+*    Authors: Blanca Larraga Garc√≠a <blanca.larraga@upm.es>
+*             Antonio J. del Ama Espinosa <ajdela@sescam.jccm.es>
+*	          Alvaro Gutierrez Martin <aguti@etsit.upm.es>
+*
+*    Developed in Hospital Nacional de Parapl√©jicos de Toledo <http://hnparaplejicos.sescam.castillalamancha.es> 
+*          and in Robolabo <http://www.robolabo.etsit.upm.es/>    
+*/
+
 function [ya,va,aa]=KernelSmoothing(vector,ancho,ventana,dibujo);
 
 %KernelSmoothing: Suavizado Kernel de funciones unidimensionales
@@ -34,12 +57,12 @@ function [ya,va,aa]=KernelSmoothing(vector,ancho,ventana,dibujo);
 % No hay subarmonicos acusados. En caso contrario, deben usarse esplines o
 % ajustes de orden superior (quinto)
 %
-% Realizado por JosÈ RamÛn Ruiz y Juanma Belda
+% Realizado por Jos√© Ram√≥n Ruiz y Juanma Belda
 
 
 
 
-%Analizamos los parametros de entrada a la funciÛn
+%Analizamos los parametros de entrada a la funci√≥n
 % switch nargin
 %     case 2
 %         if nargout == 0
@@ -57,7 +80,7 @@ function [ya,va,aa]=KernelSmoothing(vector,ancho,ventana,dibujo);
 %             Dibuja = 0;
 %         end
 %     otherwise
-%         error('N˙mero de par·metros de entrada errÛneos');
+%         error('N√∫mero de par√°metros de entrada err√≥neos');
 % end
 
 
@@ -65,7 +88,7 @@ ancho = 3.01 * ancho;
 
 %Nos aseguramos que el vector de entrada no es una matriz multidimensional
 % if length(size(vector))~=2
-%     error('Dimensiones del vector de entrada errÛneas');
+%     error('Dimensiones del vector de entrada err√≥neas');
 % end
 % 
 % %Nos aseguramos de que es un vector
@@ -88,9 +111,9 @@ ancho = length(vector_x);
 %Nos creamos la ventana
 % mVentana = feval(ventana, ancho);
 mVentana = gausswin(ancho);
-mVentana = mVentana ./ max(mVentana); %Nos aseguramos de que el m·ximo es siempre 1
+mVentana = mVentana ./ max(mVentana); %Nos aseguramos de que el m√°ximo es siempre 1
 
-%Puntos aÒadidos
+%Puntos a√±adidos
 relleno = round(max_x);
 
 %Nos generamos la matriz A (que siempre es la misma)
@@ -114,8 +137,8 @@ a(4,3)=a(3,4);
 %De la matriz A vamos a necesitar solo la inversa, asi que la calculamos
 inv_a = inv(a);
 
-%A la matriz que vamos a medir le aÒadimos al inicio y al final valores
-%para hacer mas r·pido el algoritmo
+%A la matriz que vamos a medir le a√±adimos al inicio y al final valores
+%para hacer mas r√°pido el algoritmo
 tam_vector = length(vector);
 t = vector(tam_vector);
 
@@ -127,13 +150,13 @@ vector = [vector; ones(relleno,1) .* t];
 %     h = waitbar(0, 'Calculando...');
 % end
 
-%Resevamos memoria para que vaya m·s r·pido
+%Resevamos memoria para que vaya m√°s r√°pido
 ya = zeros(tam_vector,1);
 va = ya;
 aa = ya;
 
 
-%Hacemos los c·lculos
+%Hacemos los c√°lculos
 for i = 1 : tam_vector
     %Extraemos la parte del vector de interes
     y = vector(i : i + ancho - 1);
@@ -176,6 +199,6 @@ end
 %         
 %     subplot(2,2,4);
 %     plot(aa,'y')
-%     title('aceleraciÛn');
+%     title('aceleraci√≥n');
 % end
     
